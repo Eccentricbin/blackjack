@@ -21,6 +21,12 @@ const cardSchema = new mongoose.Schema({
     value: Number,
 });
 
+const playerSchema = new mongoose.Schema({
+    name: String,
+    hand: [cardSchema],
+    score: Number,
+});
+
 const gameSchema = new mongoose.Schema({
     deck: [cardSchema],
     player: playerSchema,
